@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caleb Basil Currency Converter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-title-group">
+        <div class="logo">
+          <img src="logo.png" alt="CB Logo" class="logo-img">
+        </div>
+        <div class="title-group">
+          <h1>Caleb Basil Currency Converter</h1>
+          <p class="subtitle">Check live currency rate across the globe</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <select id="language" class="language-select">
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="de">Deutsch</option>
+          <option value="it">Italiano</option>
+          <option value="pt">Português</option>
+          <option value="ru">Русский</option>
+          <option value="zh">中文</option>
+          <option value="ja">日本語</option>
+          <option value="ar">العربية</option>
+          <option value="hi">हिन्दी</option>
+        </select>
+      </div>
+    </header>
+    <div class="converter-card">
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+      </div>
+      <form class="converter-form">
+        <div class="input-group">
+          <label for="amount">Amount</label>
+          <input type="number" id="amount" placeholder="Enter amount" min="0" step="any">
+        </div>
+        <div class="currency-group">
+          <div class="select-group">
+            <label for="from-currency-search">From</label>
+            <input type="text" id="from-currency-search" placeholder="Search currency (e.g., Naira)...">
+            <input type="hidden" id="from-currency-code">
+            <ul id="from-currency-list" class="currency-list"></ul>
+          </div>
+          <div class="select-group">
+            <label for="to-currency-search">To</label>
+            <input type="text" id="to-currency-search" placeholder="Search currency (e.g., Naira)...">
+            <input type="hidden" id="to-currency-code">
+            <ul id="to-currency-list" class="currency-list"></ul>
+          </div>
+          <div class="button-group">
+            <button id="swap-btn" type="button" title="Swap currencies">↔</button>
+            <button id="convert-btn" type="button">Convert</button>
+            <button id="reset-btn" type="button">Reset</button>
+          </div>
+        </div>
+      </form>
+      <div id="conversion-summary" class="conversion-summary"></div>
+      <div id="exchange-rate" class="exchange-rate"></div>
+      <div id="last-updated" class="last-updated"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
